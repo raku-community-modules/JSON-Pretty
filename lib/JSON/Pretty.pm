@@ -15,9 +15,6 @@
 
 module JSON::Pretty;
 
-use JSON::Pretty::Actions;
-use JSON::Pretty::Grammar;
-
 proto to-json($, :$indent = 0, :$first = 0) is export {*}
 
 my $s = 2;
@@ -47,8 +44,7 @@ multi to-json(Mu:D $s, :$indent = 0, :$first = 0) {
 }
 
 sub from-json($text) is export {
-    my $a = JSON::Pretty::Actions.new();
-    my $o = JSON::Pretty::Grammar.parse($text, :actions($a));
-    return $o.ast;
+    use JSON::Tiny;
+    from-json($text)
 }
 # vim: ft=perl6
