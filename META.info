@@ -1,0 +1,8 @@
+{
+    "name"        : "JSON::Pretty",
+    "version"     : "0.1.0",
+    "description" : "A minimal JSON (de)serializer that produces easily readable JSON",
+    "depends"     : [ JSON::Tiny ],
+    "source-url"  : "git://github.com/FROGGS/p6-JSON-Pretty.git"
+}
+
