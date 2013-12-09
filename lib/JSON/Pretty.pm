@@ -29,13 +29,13 @@ multi to-json(Str:D $d, :$indent = 0, :$first = 0) {
 }
 multi to-json(Positional:D $d, :$indent = 0, :$first = 0) {
     return (' ' x $first) ~ "\["
-            ~ $d.map({ "\n" ~ to-json($_, :indent($indent + $s), :first($indent + $s)) }).join(",")
-            ~ "\n" ~ (' ' x $indent) ~ ']';
+            ~ ($d ?? $d.map({ "\n" ~ to-json($_, :indent($indent + $s), :first($indent + $s)) }).join(",") ~ "\n" !! '')
+            ~ (' ' x $indent) ~ ']';
 }
 multi to-json(Associative:D $d, :$indent = 0, :$first = 0) {
     return (' ' x $first) ~ "\{\n"
-            ~ $d.map({ to-json(.key, :first($indent + $s)) ~ ' : ' ~ to-json(.value, :indent($indent + $s)) }).join(",\n")
-            ~ "\n" ~ (' ' x $indent) ~ '}';
+            ~ ($d ?? $d.map({ to-json(.key, :first($indent + $s)) ~ ' : ' ~ to-json(.value, :indent($indent + $s)) }).join(",") ~ "\n" !! '')
+            ~ (' ' x $indent) ~ '}';
 }
 
 multi to-json(Mu:U $, :$indent = 0, :$first = 0) { 'null' }
