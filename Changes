@@ -1,5 +1,7 @@
 Revision history for JSON::Pretty
   
 {{$NEXT}}
+
+0.1.1  2023-09-24T20:36:12+02:00
     - First version in zef ecosystem
     - Refactored code to use JSON::Fast instead of JSON::Tiny

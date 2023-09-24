@@ -1,14 +1,25 @@
 {
-    "auth": "zef:raku-community-modules",
-    "perl"        : "6.d",
-    "name"        : "JSON::Pretty",
-    "version"     : "0.1.1",
-    "description" : "A JSON (de)serializer that produces easily readable JSON",
-    "license": "Artistic-2.0",
-    "depends"     : [ "JSON::Fast:ver<0.19>:auth<cpan:TIMOTIMO>" ],
-    "provides"    : {
-        "JSON::Pretty" : "lib/JSON/Pretty.rakumod"
-    },
-    "source-url"  : "git://github.com/raku-community-modules/JSON-Pretty.git",
-    "tags": [ "JSON", "HUMAN" ]
+  "auth": "zef:raku-community-modules",
+  "build-depends": [
+  ],
+  "depends": [
+    "JSON::Fast:ver<0.19>:auth<cpan:TIMOTIMO>"
+  ],
+  "description": "A JSON (de)serializer that produces easily readable JSON",
+  "license": "Artistic-2.0",
+  "name": "JSON::Pretty",
+  "perl": "6.d",
+  "provides": {
+    "JSON::Pretty": "lib/JSON/Pretty.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "git://github.com/raku-community-modules/JSON-Pretty.git",
+  "tags": [
+    "JSON",
+    "HUMAN"
+  ],
+  "test-depends": [
+  ],
+  "version": "0.1.1"
 }
