@@ -1,0 +1,5 @@
+Revision history for JSON::Pretty
+  
+{{$NEXT}}
+    - First version in zef ecosystem
+    - Refactored code to use JSON::Fast instead of JSON::Tiny
